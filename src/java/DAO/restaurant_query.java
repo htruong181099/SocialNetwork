@@ -5,7 +5,6 @@
  */
 package DAO;
 
-import com.mysql.jdbc.PreparedStatement;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
@@ -35,12 +34,12 @@ public class restaurant_query {
         try {
             props.load(instr);
         } catch (IOException ex) {
-            Logger.getLogger(user_dao_query.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(restaurant_query.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             instr.close();
         } catch (IOException ex) {
-            Logger.getLogger(user_dao_query.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(restaurant_query.class.getName()).log(Level.SEVERE, null, ex);
         }
         String driver = props.getProperty("driver.name");
         String url = props.getProperty("server.name");
@@ -50,17 +49,17 @@ public class restaurant_query {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(user_dao_query.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(restaurant_query.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             conn = (Connection) DriverManager.getConnection(url, username, password);
         } catch (SQLException ex) {
-            Logger.getLogger(user_dao_query.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(restaurant_query.class.getName()).log(Level.SEVERE, null, ex);
         }
      }
      public boolean addRestaurant(restaurant res) throws SQLException
      {
-         String sql = "INSERT INTO `socialnetworkdb`.`restaurant` ( `restaurant_name`, `address`, `point`) VALUES ( ?, ?, ?);";
+         String sql = "INSERT INTO `social_network`.`restaurant` ( `restaurant_name`, `address`, `point`) VALUES ( ?, ?, ?);";
          java.sql.PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
          ps.setString(1, res.getRestaurant_name());
          ps.setString(2, res.getAddress());
@@ -77,7 +76,7 @@ public class restaurant_query {
      }
       public boolean deleteRestaurant(restaurant res) throws SQLException
     {
-        String sql ="DELETE FROM `socialnetworkdb`.`post` WHERE (`restaurant_id` = ?); ";
+        String sql ="DELETE FROM `social_network`.`post` WHERE (`restaurant_id` = ?); ";
         java.sql.PreparedStatement ps =conn.prepareStatement(sql);
         ps.setInt(1, res.getRestaurant_id());
         this.results=ps.executeQuery();
@@ -89,11 +88,11 @@ public class restaurant_query {
     }
       public float updatePointRestaurant(restaurant res, float Addedpoint) throws SQLException
       {
-          String sql="UPDATE `socialnetworkdb`.`restaurant` SET `point` = ? WHERE (`restaurant_id` = ?);";
+          String sql="UPDATE `social_network`.`restaurant` SET `point` = ? WHERE (`restaurant_id` = ?);";
           java.sql.PreparedStatement ps = conn.prepareStatement(sql);
           float oldPoint=res.getPoint();
           int numOfReview=0;
-          String sqlCount="SELECT * from socialnetworkdb.review where restaurant_id =?";
+          String sqlCount="SELECT * from social_network.review where restaurant_id =?";
           java.sql.PreparedStatement ps2=conn.prepareStatement(sqlCount);
           ps2.setInt(1, res.getRestaurant_id());
           this.results=ps2.executeQuery();
