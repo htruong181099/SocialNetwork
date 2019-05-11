@@ -1,6 +1,12 @@
+<script type="text/javascript" src="public/js/jquery.min.js"></script>
+<script type="text/javascript" src="public/js/popper.js"></script>
+<script type="text/javascript" src="public/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/js/jquery.mCustomScrollbar.js"></script>
+<script type="text/javascript" src="public/lib/slick/slick.min.js"></script>
+<script type="text/javascript" src="public/js/scrollbar.js"></script>
+<script type="text/javascript" src="public/js/script.js"></script>
 
-<div style="height:200px; background-color: blue">header</div>
-<script src="public/js/libs/bootstrap.min.js"></script>
 </body>
-<!-- Mirrored from demo.7uptheme.com/html/isone/home-13.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Oct 2018 15:11:45 GMT -->
-</html>
+
+<!-- Mirrored from gambolthemes.net/workwise_demo/HTML/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 28 Apr 2019 14:17:25 GMT -->
+</html>s

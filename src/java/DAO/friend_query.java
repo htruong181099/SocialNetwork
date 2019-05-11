@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56,11 +57,43 @@ public class friend_query {
         }
     }
     
-    public boolean addfriend(int us1_id, int us2_id, friendlist fr) throws SQLException{
-        String sql = "INSERT INTO `social_network`.`friendlist` (`from_id`,`to_id`) VALUES (?, ?)";
+    /*public boolean addfriend(String us1_name, String us2_name, friendlist fr) throws SQLException{
+        String sql1 ="SELECT `user_id` FROM `social_network`.`user` WHERE `user_name` = `?` ";
+        PreparedStatement id1 = conn.prepareStatement(sql1);
+        PreparedStatement id2 = conn.prepareStatement(sql1);
+        id1.setString(1, us1_name);
+        id2.setString(1, us2_name);
+        ResultSet rs1 = id1.executeQuery(sql1);
+        ResultSet rs2= id2.executeQuery(sql1);
+        
+        String sql = "INSERT INTO `social_network`.`friendlist` (`id_user`,`id_friend`,`user_name`,`friend_name`) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, us1_id);
-            ps.setInt(2, us2_id);
+            this.results = ps.getGeneratedKeys();
+            ps.setInt(1, rs1.getInt("user_id"));
+            ps.setInt(2, rs2.getInt("user_id"));
+            ps.setString(3, us1_name);
+            ps.setString(4, us2_name);
+            ps.executeUpdate();
+            this.results = ps.getGeneratedKeys();
+            int key = 0;
+            if (this.results.next()) {
+                key = this.results.getInt(1);
+                fr.setFriendlist_id(key);
+                return true;
+            }
+            return false;
+    }*/
+    
+    public boolean addfriend(User us1, User us2, friendlist fr) throws SQLException{
+        
+        String sql = "INSERT INTO `social_network`.`friendlist` (`id_user`,`id_friend`,`user_name`,`friend_name`) VALUES (?, ?, ?, ?)";
+            PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            this.results = ps.getGeneratedKeys();
+            ps.setInt(1, us1.getUser_id());
+            ps.setInt(2, us2.getUser_id());
+            ps.setString(3, us1.getUsername());
+            ps.setString(4, us2.getUsername());
+            ps.executeUpdate();
             this.results = ps.getGeneratedKeys();
             int key = 0;
             if (this.results.next()) {
@@ -71,5 +104,20 @@ public class friend_query {
             return false;
     }
     
+    public void updateStatus(friendlist fr) throws SQLException{
+        
+        String sql = "UPDATE `social_network`.`friendlist` SET status =? where friendlist_id = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, 1);
+            ps.setInt(2, fr.getFriendlist_id());
+           
+    }
+    
+    
+    public static void main(String[] args) throws SQLException {
+        friend_query friend = new friend_query();
+       // friendlist fr = new friendlist();
+        
 
+    }
 }

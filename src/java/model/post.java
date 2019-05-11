@@ -22,6 +22,10 @@ public class post {
         this.content = content;
         this.image_content = image_content;
         this.date_post = date_post;
+    }                                                           
+
+    public post() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getPost_id() {

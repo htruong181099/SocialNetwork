@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Admin
  */
-@WebServlet(name = "home", urlPatterns = {"/index"})
+@WebServlet(name = "index", urlPatterns = {"/index"})
 public class home extends HttpServlet {
 
     /**
@@ -80,6 +80,8 @@ public class home extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/index.jsp";
+        String view  = "views/home/v_home.jsp";
+        request.setAttribute("view", view);
         RequestDispatcher dis = request.getRequestDispatcher(url);
         dis.forward(request, response);
     }

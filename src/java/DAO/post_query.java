@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -40,7 +41,7 @@ public class post_query {
             Logger.getLogger(post_query.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            instr.close();
+            instr.close();x
         } catch (IOException ex) {
             Logger.getLogger(post_query.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -118,3 +119,4 @@ public class post_query {
     }
     
 }
+

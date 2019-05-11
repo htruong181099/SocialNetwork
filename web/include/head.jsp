@@ -8,24 +8,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
-        <meta property="og:type"          content="website" />
-        <meta property="og:title"         content="Your Website Title" >
-        <meta property="og:description"   content="Your description" />
-        <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
-       	<meta charset="UTF-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!--        <link rel="stylesheet" type="text/css" href="public/css/boostrap-theme.css"/>
-        <link rel="stylesheet" type="text/css" href="public/css/boostrap-theme.min.css"/>
-        <link rel="stylesheet" type="text/css" href="public/css/boostrap.css"/>-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    <!--Fontawesome CDN-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <title>Banana</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link rel="stylesheet" type="text/css" href="public/css/animate.css">
+        <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="public/css/line-awesome.css">
+        <link rel="stylesheet" type="text/css" href="public/css/line-awesome-font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="public/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="public/css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" type="text/css" href="public/lib/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="public/lib/slick/slick-theme.css">
+        <link rel="stylesheet" type="text/css" href="public/css/style.css">
+        <link rel="stylesheet" type="text/css" href="public/css/responsive.css">
+        <link rel="stylesheet" type="text/css" href="public/css/login.css">
 
-	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="styles.css">
-        
     </head>
     <body>
-       

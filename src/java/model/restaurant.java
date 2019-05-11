@@ -13,14 +13,25 @@ import com.sun.xml.rpc.processor.modeler.j2ee.xml.string;
  */
 public class restaurant {
     private int restaurant_id;
-    private string address;
+    private String restaurant_name;
+    private String address;
     private int point;
-    public restaurant(int restaurant_id, string address,int point)
-    {
-        this.restaurant_id=restaurant_id;
-        this.address=address;
-        this.point=point;
+
+    public restaurant(int restaurant_id, String restaurant_name, String address, int point) {
+        this.restaurant_id = restaurant_id;
+        this.restaurant_name = restaurant_name;
+        this.address = address;
+        this.point = point;
     }
+
+    public String getRestaurant_name() {
+        return restaurant_name;
+    }
+
+    public void setRestaurant_name(String restaurant_name) {
+        this.restaurant_name = restaurant_name;
+    }
+  
 
     public int getRestaurant_id() {
         return restaurant_id;
@@ -30,11 +41,11 @@ public class restaurant {
         this.restaurant_id = restaurant_id;
     }
 
-    public string getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(string address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

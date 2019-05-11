@@ -9,14 +9,14 @@ package model;
  *
  * @author BaoPhuc
  */
-public class comment {
+public class Comment {
     private int comment_id;
     private int user_id;
     private int post_id;
     private String comment_content;
     private String comment_date;
 
-    public comment(int comment_id, int user_id, int post_id, String comment_content, String comment_date) {
+    public Comment(int comment_id, int user_id, int post_id, String comment_content, String comment_date) {
         this.comment_id = comment_id;
         this.user_id = user_id;
         this.post_id = post_id;
